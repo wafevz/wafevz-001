@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>项目1</title>
+<style>
+    body{
+        background-color: bisque;
+    }
+    .d0{
+        height: 800px;
+        width: 1300px;
+        padding:10px;
+        border: 1px solid black;
+        position: relative;
+    }
+    .d1{
+        width: 600px;
+        height: 400px;
+        border: 1px solid black;
+        background-image: url(2222.jpg);
+        background-size: 100% 100%;
+        transition: transform 1s ,margin 1s;
+        transform-style: preserve-3d;
+        perspective: 200px;
+    }
+    .d2{
+        width: 600px;
+        height: 400px;
+        border: 1px solid black;
+        background-image: url(1111.jpg);
+        background-size: 100% 100%;
+        transition: transform 1s ,margin 1s;
+        transform-style: preserve-3d;
+        perspective: 200px;
+    }
+    .d3{
+        width: 600px;
+        height: 400px;
+        border: 1px solid black;
+        background-image: url(1111.jpg);
+        background-size: 100% 100%;
+        transition: transform 1s ,margin 1s;
+        transform-style: preserve-3d;
+        perspective: 200px;
+    }
+    .binleft{
+        border: 2px black solid;
+        border-radius: 50%;
+        background-color: aqua;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top:50%;left:1%;
+        transition: 0.6s ease;
+        text-align: center;
+    }
+    .binright{
+        border: 2px black solid;
+        border-radius:50%;
+        background-color: aqua;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top:50%;right: 1%;
+        transition: 0.6s ease;
+        text-align: center;
+    }
+    .binleft:hover,.binright:hover{
+        background-color: black;
+        color:antiquewhite
+    }
+</style>
+<script>
+    function s(obj){
+        obj.style.transform="rotateY(60deg)";
+        obj.style.marginLeft="10%"
+    }
+    function d(obj){
+        obj.style.transform="rotateY(0deg)";
+        obj.style.marginLeft="25%"
+    }
+    function f(obj){
+        obj.style.transform="rotateY(-60deg)";
+        obj.style.marginRight="10%"
+    }
+</script>
+</head>
+<body>
+    <div class="d0">
+        <a class="binleft">❮</a>
+        <a class="binright">❯</a>
+        <div class="d1" style="transform: rotateY(0deg);"></div>
+        <!--<div class="d2" style="transform: rotateY(0deg);"></div>
+        <div class="d3" style="transform: rotateY(-60deg);"></div>-->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>

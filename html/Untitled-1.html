@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>项目1</title>
+<style>
+body
+{
+    margin: 0%;
+    padding: 0%;
+    height: 1000px;
+    background-image:url(1111.jpg) ;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+ul
+{
+    margin: 0;
+    padding: 0;
+    background-color:gray;
+    list-style-type: none;
+    margin-top: 1%;
+    margin-left: 1%;
+    position: fixed;
+    opacity: 0.9;
+    z-index: 1;
+}
+li
+{
+    float:left;
+}
+li a
+{
+    display: block;
+    text-align: center;
+    color:aqua;
+    padding:10px 0px;
+    background-color:rgb(128, 122, 122);
+    text-decoration: none;
+    width: 320px;
+    border: 2px solid white;
+    font-size: large;
+    font-family:'Times New Roman', Times, serif;
+}
+input[type=text],input[type=password]
+{
+    width: 80%;
+}
+input[type=text]:focus,input[type=password]:focus
+{
+    background-color: bisque;
+}
+.center 
+{
+    margin: auto;
+    width:25%;
+    margin-top: 25%;
+    overflow: auto;
+    border: 3px solid rgb(167, 167, 238);
+    padding: 10px;
+    text-align:left;
+    opacity: 0.7;
+
+}
+.active
+{
+    color:rgb(13, 18, 18);
+    background-color: rgb(202, 199, 199);
+}
+a:hover
+{
+    color:rgb(13, 18, 18);
+    background-color: rgb(202, 199, 199);
+}
+.dropbtn {
+    background-color:rgb(24, 24, 97);
+    color:aqua;
+    padding: 16px;
+    min-width: 200px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.dropdown 
+{
+    position:fixed;
+    top:15%;
+    margin-left: 1%;
+    display: inline-block;
+    opacity: 0.7;
+}
+
+.dropdown-content 
+{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    background-color: rgb(95, 95, 173);
+    text-align: center;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color:rgb(89, 89, 122)}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color:rgb(42, 42, 145);}
+.dropdown:visited .dropbtn {background-color:red;}
+.footer
+{
+    background-color: rgb(206, 199, 199);
+    text-align: center;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+.footer a
+{
+    color:gray;
+    margin-right: 2px;
+    padding: 2px;
+    float: left;
+    border: 1px solid rgb(80, 25, 25);
+    border-right: red;
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+<ul>
+    <li><a class="active" href="file:///C:/%E9%82%93%E6%9D%A8%E6%9D%A8/Untitled-1.html">主页</a></li>
+    <li ><a href="file:///C:/%E9%82%93%E6%9D%A8%E6%9D%A8/Untitled-3.html">新闻</a></li>
+    <li ><a href="#c">联系</a></li>
+    <li ><a href="#a">关于</a></li>
+</ul>
+<p style="clear: both;"></p>
+<br>
+<div class="dropdown">
+    <button class="dropbtn">菜单</button>
+    <div class="dropdown-content">
+      <a href="file:///C:/%E9%82%93%E6%9D%A8%E6%9D%A8/Untitled-1.html">项目1</a>
+      <a href="file:///C:/%E9%82%93%E6%9D%A8%E6%9D%A8/Untitled-2.html">项目2</a>
+    </div>
+  </div>
+<div style="background-image: url(1111.jpg);" class="center">
+ <form action="" method="post">
+    <div>
+      <lable for="name"style="color: aqua;"placeholder="用户名" ></lable>
+      <input type="text" id="name" placeholder="用户名"  required>
+    </div>
+   <br>
+    <div>
+      <lable for="password" style="color: aqua;"></lable>
+      <input type="password" id="password"placeholder="密码" required>
+    </div>
+    <!--<input type="radio" id="male" name="gender" value="male">
+    <label for="male"style="color: aqua;">男</label>        
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female"style="color: aqua;">女</label>-->
+   <br>
+    <div>
+      <input type="checkbox" id="subscribe" name="subscribe">
+      <label for="subscribe"style="color: aqua;">协作合同<a href="#s" style="color:rgb(141, 203, 203);text-decoration: none;">sddrc</a></label>
+    </div>
+   <br>
+    <div>
+      <label for="country"style="color: aqua;">Country:</label>
+      <select id="country" name="country" style="width:25%;">
+         <option value="cn">CN</option>
+         <option value="usa">USA</option>
+         <option value="uk">UK</option>
+      </select>
+    </div>
+   <br>
+    <div style="text-align: center;"><a href="#file:///C:/%E9%82%93%E6%9D%A8%E6%9D%A8/Untitled-2.html">
+      <input type="submit" value="进入"></a>
+    </div>
+ </form>
+</div>
+<div class="footer">
+    <a href="#s">工具</a>
+    <a href="#s">帮助</a>
+</div>
+</body>

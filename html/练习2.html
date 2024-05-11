@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>项目1</title>
+<style>
+    body{
+        background-color: #666;
+    }
+    .cen{
+        text-align: center;
+        height:20px;
+        margin: auto;
+    }
+    .item{
+        width: 50px;
+        height: 20px;
+        color: pink;
+        border-radius: 30px;
+        text-align: center;
+        display: inline-block;
+        line-height: 20px;
+        background-color: white;
+        cursor: pointer;
+    }
+    .item:active{
+        background-color: rgba(255, 192, 203, 0.584);
+    }
+    .box{
+        position: absolute;
+        width: 50px;
+        height: 5px;
+        background-color: pink;
+        border-radius: 30px;
+        transition: all .2s;
+    }
+
+</style>
+<body>
+    <div class="cen">
+        <div class="item" data-id="1">动画</div>
+        <div class="item" data-id="2">电影</div>
+        <div class="item" data-id="3">鬼畜</div>
+        <div class="item" data-id="4">娱乐</div>
+        <div class="item" data-id="5">惊悚</div>
+    </div>
+    <div class="box"></div>
+    <script>
+        const cen = document.querySelector('.cen')
+        const box = document.querySelector('.box')
+        const items = document.querySelectorAll('.cen .item')
+        box.style=`left:${items[0].offsetLeft}px;top:${items[0].offsetTop + 22}px`
+        cen.addEventListener('click',function(e){
+            if(e.target.tagName === 'DIV' && e.target.dataset.id){
+                box.style=`left:${e.target.offsetLeft}px;top:${e.target.offsetTop + 22}px`
+                //console.log(e.target.offsetLeft);
+            }
+
+        })
+    </script>
+</body>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box1,.box2{
+        height: 100px;
+        width: 200px;
+        border: 1px solid black;
+        background-color: #666;
+        color: red;
+        font-size: larger;
+        text-align: center;
+        line-height: 100px;
+    }
+
+</style>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <script>
+        const box = document.querySelector('.box1')
+        const date = new Date()
+        box.innerHTML = date.toLocaleString()
+        setInterval(() => {
+            const date = new Date()
+            box.innerHTML = date.toLocaleTimeString()
+        }, 1000);
+        //倒计时
+        const now = +new Date()
+        const fur = +new Date('2024-9-1 20:00:00')
+        const count = (fur - now) / 1000
+        let d = parseInt(count / 60 / 60 / 24)
+        d = d < 10? '0' + d : d
+        let h = parseInt(count / 60 / 60 % 24)
+        h = h < 10? '0' + h : h
+        let m = parseInt(count / 60 % 60)
+        m = m < 10? '0' + m : m
+        let s = parseInt(count % 60)
+        s = s < 10? '0' + s : s
+        box.nextElementSibling.innerHTML = `${d}:${h}:${m}:${s}`
+        setInterval(() => {
+            const now = +new Date()
+            const fur = +new Date('2024-9-1 20:00:00')
+            const count = (fur - now) / 1000
+            let d = parseInt(count / 60 / 60 / 24)
+            d = d < 10? '0' + d : d
+            let h = parseInt(count / 60 / 60 % 24)
+            h = h < 10? '0' + h : h
+            let m = parseInt(count / 60 % 60)
+            m = m < 10? '0' + m : m
+            let s = parseInt(count % 60)
+            s = s < 10? '0' + s : s
+            //结点查找-兄弟结点 元素.previousElementSibling  或 元素.nextElementSibling
+            //还有 父节点   子元素.parentNode    得到父元素
+            //     子节点   父元素.children      得到子元素的一个伪数组
+            box.nextElementSibling.innerHTML = `${d}:${h}:${m}:${s}`
+        }, 1000);
+    </script>
+</body>
+</html>

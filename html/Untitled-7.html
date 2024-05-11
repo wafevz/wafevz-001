@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>项目1</title>
+    <style>
+        body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image:url(4444.jpg);
+            overflow: hidden;
+        }
+        .shell{
+            position: relative;
+            width: 60vw;
+            height: 40vw;
+            max-width: 380px;
+            max-height: 250px;
+            margin: 0;
+            color: antiquewhite;
+            perspective: 1000px;
+            transform-origin: center;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+        }
+        .item{
+            position: absolute;
+            width: 60vw;
+            height: 40vw;
+            cursor: pointer;
+            max-width: 380px;
+            max-height: 250px;
+            box-shadow: 0 5px 20px black;
+            border-radius: 6px;
+            background-size: cover;
+            background-size: cover;
+            -webkit-box-reflect: below 25px -webkit-linear-gradient(transparent 50%,rgba(225,225,225,0.3)) ;
+        }
+        #w1{
+            background-image: url(5555.jpg);
+            transform: translateZ(25vw) translateX(-15vw) rotateY(-20deg);
+            transition: transform 0.5s;
+        }
+        #w2{
+            background-image: url(6666.jpg);
+            transform: translateZ(35vw) translateX(0vw) rotateY(0deg);
+            transition: transform 0.5s;
+        }
+        #w3{
+            background-image: url(4444.jpg);
+            transform: translateZ(25vw) translateX(15vw) rotateY(20deg);
+            transition:transform 0.5s;
+        }
+        /* #w4{
+            background-image: url(7777.jpg);
+            transform: translateZ(25vw) translateX(20vw) rotateY(20deg);
+            transition: transform 0.5s;
+        }
+        #w5{
+            background-image: url(5555.jpg);
+            transform: translateZ(20vw) translateX(25vw) rotateY(40deg);
+            transition: transform 0.5s;
+        } */
+        .dot{
+            background-color:white;
+            width: 60px;
+            height:300px;
+            border: 0px;
+            cursor: pointer;
+            line-height: 300px;
+            font-size: 50px;
+            border-radius:10px;
+            position: absolute;
+            color:red;
+            text-align: center;
+            opacity: .4;
+        }
+        .dot:hover{
+            background-color: rgb(237, 224, 206);
+            color:black;
+            opacity: .8;
+        }
+        .pre{
+            left:0px;
+        }
+        .next{
+            right:0px;
+        }
+    </style>
+    <script>
+        var m=0;
+        var a=document.getElementsByClassName("item");
+        function s(x)
+        {
+            m+=x;
+            if(m==1){
+                a[0].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[1].style.transform="translateZ(25vw) translateX(15vw) rotateY(20deg)";
+                a[2].style.transform="translateZ(25vw) translateX(-15vw) rotateY(-20deg)";
+
+            }
+            else if(m==2){
+                a[0].style.transform="translateZ(25vw) translateX(15vw) rotateY(20deg)";
+                a[1].style.transform="translateZ(25vw) translateX(-15vw) rotateY(-20deg)";
+                a[2].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+            }
+            else if(m==3){
+                a[0].style.transform="translateZ(25vw) translateX(-15vw) rotateY(-20deg)";
+                a[1].style.transform="translateZ(35vw) translateX(0vw) rotateY(0)";
+                a[2].style.transform="translateZ(25vw) translateX(15vw) rotateY(20deg)";
+            }
+            else if(m>3){
+                m=0;
+                s(1);
+            }
+        }
+        function f(y)
+        {
+            m-=y;
+            if(m==2){
+                a[0].style.transform="translateZ(25vw) translateX(15vw) rotateY(20deg)";
+                a[1].style.transform="translateZ(25vw) translateX(-15vw) rotateY(-20deg)";
+                a[2].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+            }
+            if(m==1){
+                a[0].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[1].style.transform="translateZ(25vw) translateX(15vw) rotateY(20deg)";
+                a[2].style.transform="translateZ(25vw) translateX(-15vw) rotateY(-20deg)";
+            }
+            if(m==0){
+                a[0].style.transform="translateZ(25vw) translateX(-15vw) rotateY(-20deg)";
+                a[1].style.transform="translateZ(35vw) translateX(0vw) rotateY(0)";
+                a[2].style.transform="translateZ(25vw) translateX(15vw) rotateY(20deg)";
+            }
+            if(m<0){
+                m=3;
+                f(1);
+            }
+        }
+    </script> 
+</head>
+<body>
+    <div class="shell">
+        <div class="content">
+            <div class="item" id="w1" onclick="s(1)"></div>
+            <div class="item" id="w2" onclick="s(1)"></div>
+            <div class="item" id="w3" onclick="s(1)"></div>
+            <!-- <div class="item" id="w4" onclick="s(1)"></div>
+            <div class="item" id="w5" onclick="s(1)"></div> -->
+        </div>
+    </div>
+    <div class="dot pre" onclick="f(1)"><</div>
+    <div class="dot next" onclick="s(1)">></div>
+</body>
+</html>

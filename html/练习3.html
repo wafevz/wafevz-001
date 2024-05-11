@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>项目1</title>
+<style>
+    html{
+        scroll-behavior: smooth;
+    }
+    body{
+        height: 3000px;
+    }
+    .box{
+        height: 400px;
+        width: 800px;
+        text-align: center;
+        font-size: 60px;
+        line-height: 400px;
+        margin-top: 10px;
+        background-color: rgba(255, 192, 203, 0.598);
+    }
+    .nav{
+        position:fixed;
+        top:300px;
+        right: 100px;
+        width: 50px;
+        color: #666;
+        background-color:pink;
+        display: none;
+    }
+    .item{
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        cursor: pointer;
+        border-bottom: 1px solid black;
+    }
+    .item:hover{
+        color: black;
+        background-color:bisque
+    }
+    .active{
+        color: aqua;
+    }
+</style>
+<body>
+    <div class="box" style="margin-top: 200px;">区域1</div>
+    <div class="box">区域2</div>
+    <div class="box">区域3</div>
+    <div class="box">区域4</div>
+    <div class="nav">
+        <div class="item"data-id="1">区域1</div>
+        <div class="item"data-id="2">区域2</div>
+        <div class="item"data-id="3">区域3</div>
+        <div class="item"data-id="4">区域4</div>
+        <div class="item" id="5">顶部</div>
+    </div>
+    <script>
+        const nav = document.querySelector('.nav')
+        const boxs = document.querySelectorAll('.box')
+        const items = document.querySelectorAll('.nav .item')
+        window.addEventListener('scroll',function(){
+            const old = document.querySelector('.nav .active')
+            if(old) old.classList.remove('active')
+            const n = document.documentElement.scrollTop
+            if(n >= 100){
+                nav.style="display:block"
+            }
+            else if(n < 100){
+                nav.style="display:none"
+                const old = document.querySelector('.nav .active')
+                if(old) old.classList.remove('active')
+            }
+            if(n < boxs[1].offsetTop && n >= boxs[0].offsetTop){
+                items[0].classList.add('active')
+            }
+            else if(n >= boxs[1].offsetTop && n < boxs[2].offsetTop){
+                items[1].classList.add('active')
+            }
+            else if(n >= boxs[2].offsetTop && n < boxs[3].offsetTop){
+                items[2].classList.add('active')
+            }
+            else if(n >= boxs[3].offsetTop){
+                items[3].classList.add('active')
+            }
+        })
+        nav.addEventListener('click',function(e){
+            if(e.target.tagName = 'DIV' && e.target.dataset.id){
+                const old = document.querySelector('.nav .active')
+                if(old) old.classList.remove('active')
+                e.target.classList.add('active')
+                let n = +e.target.dataset.id
+                document.documentElement.scrollTop = boxs[n-1].offsetTop
+            }
+            else{
+                document.documentElement.scrollTop = 0
+                const old = document.querySelector('.nav .active')
+                if(old) old.classList.remove('active')
+            }
+        })
+    </script>
+</body>

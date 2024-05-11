@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>                                
+<head>
+<meta charset="utf-8"
+><title>项目1</title>
+<style>                              
+html,body{
+    margin: 0 ;     
+    width: 100%;    
+    height:110%;           
+    background-image: url(../image/3333.jpg);          
+    background-size:cover;          
+    background-repeat: no-repeat;
+}
+ul{   
+    list-style-type: none;    
+    margin-left: 150px;  
+    margin-top: 0px;    
+    padding: 0;      
+    background-color:black;
+    /* position: fixed; */
+}
+ul::after{     
+    content: ' ';           
+    display: block;
+    clear: both
+}
+li{          
+    float: left;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+li a:hover{
+    background-color: gray;
+}
+.xiala{
+    border: 1px solid black;
+    position: absolute;
+    top:38px;
+    left:640px;
+    z-index: 1;
+    display: none;
+}
+.mi{
+    display: block;
+    width: 90px;
+    padding: 5px;
+    background-color: #666;
+    color: black;
+    text-decoration:block;
+    font-size: small;
+}
+.mi:hover{
+    background-color:wheat;
+    cursor: pointer;
+}
+input[type=search]{
+    margin:10px 10px;
+    background-color: black;
+    border-bottom: 1px white solid;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 100px;
+    color: aliceblue;
+}
+.name{
+    height:95vh;
+    position: fixed;
+    top: 0%;
+    width: 150px;
+    background-color:rgb(250, 248, 248);
+    border: 1px black solid;
+}
+.name p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+.headimg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 1px 1px;
+    margin: auto;
+    margin-top: 50px;
+    background-image: url(../image/4444.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.rol1{
+    position: relative;
+    height: 304px;
+    overflow:visible;
+    margin-left: 170px;
+}
+.mySlides {
+    display:none
+}
+.slideshow-container {
+    width: 600px;
+    height:300px;
+    border: 2px black solid;
+    position:absolute;
+}
+.prev,.next {
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    width:50px;
+    height:300px;
+    color: black;
+    background-color:rgb(222, 207, 207);
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    line-height: 300px;
+    transition: 0.1s ease;
+    opacity: 0.7;
+}
+.next {
+    right: 0;
+}
+.prev:hover, .next:hover {
+    background-color:wheat;
+    opacity: 0.8;
+}
+.active{
+    display: block;
+}
+.rol2{
+    /* position: relative; */
+    height: 250px;
+    overflow: hidden;
+    margin-left: 170px;
+    margin-top: 20px;
+}
+::after{
+    content: ' ';
+    display: block;
+    clear: both;
+}
+.conent{
+    width:350px;
+    height: 250px;
+    float:left;
+    margin-right: 10px;
+    background-color: black;
+    position: relative;
+}
+.mask{
+    cursor: pointer;
+    width:350px ;
+    height: 250px;
+    position:absolute;
+    left:0px;
+    top:0px;
+    background-color: black;
+    opacity: 0;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    line-height: 250px;
+    transition: 0.5s;
+}
+.conent .mask:hover{
+    opacity: 1;
+    font-size: 60px;
+}
+.conent img {
+    width: 350px;
+    height: 250px;
+}
+.mySlides img{
+    width: 600px;
+    height: 300px;
+}
+.word{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+    color: white;
+    opacity: 0.6;
+    margin-right: 50px;
+}
+.w0{
+    width:624px;
+    height: 305px;
+    position: absolute;
+    left: 610px;
+    column-count: 2 ;
+    column-rule: 2px red dashed;
+}
+.w1{
+    width: 250px;
+    height: 250px;
+    overflow: scroll;
+    float:left;
+}
+.w2{
+    width: 250px;
+    height: 250px;
+    overflow: scroll;
+    float:left;
+}
+.word:hover{
+    opacity: 1;
+}
+.foot{
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    height: 5vh;
+}
+#nav{
+    position:fixed;
+    top:200px;
+    right: 60px;
+    width: 50px;
+    height: 50px;
+    background-color: antiquewhite;
+    color:#666;
+    font-size: 20px;
+    text-align: center;
+    z-index: 2;
+    display: none;
+}
+#nav:hover{
+    background-color: aliceblue;
+    color:black;
+    cursor: pointer;
+}
+</style>
+</head>
+    <body>
+        <div class="name">
+            <div class="headimg"></div>
+            <p style="text-align: center;">Home page</p>
+            <p style="border-bottom: 2px black solid;">ID:1111111111</p>
+            <p>Name:jone</p>
+        </div>
+        <ul>
+            <li><a href="#">VELD</a></li>
+            <li><a href="#">FLOWER</a></li>
+            <li><a href="#">OCEAN</a></li>
+            <li><a href="#">MONTES</a></li>
+            <li><a href="#">SKY</a></li>
+            <li><a href="#">BUILD</a></li>
+            <li><input type="search" name="search" placeholder="search:" autocomplete="off"></li>
+            <li style="float: right;"><a href="#">EXIT</a></li>
+            <li style="float: right;"><a href="#" style="border-right: 2px solid white">HELP</a></li>
+        </ul> 
+        <div class="xiala">
+            <div class="mi" >111</div>
+            <div class="mi" >222</div>
+            <div class="mi" >333</div>
+            <div class="mi" >444</div>
+            <div class="mi" >555</div>
+        </div>
+        <div id="nav">
+            回到顶部
+        </div>
+    <div class="rol1">
+        <div class="slideshow-container">
+            <div class="mySlides active">
+            <img src="../image/6666.jpg" style="width:100%;height:300px;">
+            </div>
+            <div class="mySlides">
+            <img src="../image/4444.jpg" style="width:100%;height:300px;">
+            </div>
+        
+            <div class="mySlides">
+            <img src="../image/5555.jpg" style="width:100%;height:300px;">
+            </div>
+            <div class="prev " onclick="plusSlides(-1)"><</div>
+            <div class="next " onclick="plusSlides(1)">></div>
+        </div>
+        <div class="word w0">
+            If not to the sun for smiling, warm is still in the sun there, 
+            but wewill laugh more confident calm; if turned to found his own shadow,
+            appropriate escape, the sun will be through the heart,warm each place behind the 
+            corner; if an outstretched palm cannot fall butterfly, then clenched waving arms,
+            given power; if I can't have bright smile, it will face to the sunshine, 
+            and sunshine smile together, in full bloom.When you love who you are,
+            you become a conduit of ***.just drop into your heart space,and live
+            life from this ***.for all of this doing is not who you ***.listen 
+            to your hearts soft whisper,this voice will show you the ***.live 
+            life from your essence is what she will ***.see the light in yourself,
+            and your world will be ***.there is no need to worry,you are exactly 
+            as you should be;remember to love who you are,and love you will see.
+        </div>
+    </div>
+    <div class="rol2 after">
+        <div class="conent">
+            <img src="../image/6666.jpg">
+            <div class="mask">VODE</div>
+        </div>
+        <div class="word w1">
+            If not to the sun for smiling, warm is still in the sun there, 
+            but wewill laugh more confident calm; if turned to found his own shadow,
+            appropriate escape, the sun will be through the heart,warm each place behind the 
+            corner; if an outstretched palm cannot fall butterfly, then clenched waving arms,
+            given power; if I can't have bright smile, it will face to the sunshine, 
+            and sunshine smile together, in full bloom.When you love who you are,
+            you become a conduit of ***.just drop into your heart space,and live
+            life from this ***.for all of this doing is not who you ***.listen 
+            to your hearts soft whisper,this voice will show you the ***.live 
+            life from your essence is what she will ***.see the light in yourself,
+            and your world will be ***.there is no need to worry,you are exactly 
+            as you should be;remember to love who you are,and love you will see.
+        </div>
+        <div class="conent c1">
+            <img src="../image/5555.jpg">
+            <div class="mask">VODE</div>
+        </div>
+        <div class="word w2">
+        <i> If not to the sun for smiling, warm is still in the sun there, 
+            but wewill laugh more confident calm; if turned to found his own shadow,
+            appropriate escape, the sun will be through the heart,warm each place behind the 
+            corner; if an outstretched palm cannot fall butterfly, then clenched waving arms,
+        given power; if I can't have bright smile, it will face to the sunshine, 
+        and sunshine smile together, in full bloom.When you love who you are,
+        you become a conduit of ***.just drop into your heart space,and live
+        life from this ***.for all of this doing is not who you ***.listen 
+        to your hearts soft whisper,this voice will show you the ***.live 
+        life from your essence is what she will ***.see the light in yourself,
+        and your world will be ***.there is no need to worry,you are exactly 
+        as you should be;remember to love who you are,and love you will see.
+        </i>
+    </div>
+</div>
+<div class="rol2 after">
+    <div class="conent">
+        <img src="../image/5555.jpg">
+        <div class="mask">VODE</div>
+    </div>
+    <div class="word w1">
+        If not to the sun for smiling, warm is still in the sun there, 
+        but wewill laugh more confident calm; if turned to found his own shadow,
+        appropriate escape, the sun will be through the heart,warm each place behind the 
+        corner; if an outstretched palm cannot fall butterfly, then clenched waving arms,
+        given power; if I can't have bright smile, it will face to the sunshine, 
+        and sunshine smile together, in full bloom.When you love who you are,
+        you become a conduit of ***.just drop into your heart space,and live
+        life from this ***.for all of this doing is not who you ***.listen 
+        to your hearts soft whisper,this voice will show you the ***.live 
+        life from your essence is what she will ***.see the light in yourself,
+        and your world will be ***.there is no need to worry,you are exactly 
+        as you should be;remember to love who you are,and love you will see.
+    </div>
+    <div class="conent c1">
+        <img src="../image/7777.jpg">
+        <div class="mask">VODE</div>
+    </div>
+    <div class="word w2">
+    <i> If not to the sun for smiling, warm is still in the sun there, 
+        but wewill laugh more confident calm; if turned to found his own shadow,
+        appropriate escape, the sun will be through the heart,warm each place behind the 
+        corner; if an outstretched palm cannot fall butterfly, then clenched waving arms,
+        given power; if I can't have bright smile, it will face to the sunshine, 
+        and sunshine smile together, in full bloom.When you love who you are,
+        you become a conduit of ***.just drop into your heart space,and live
+        life from this ***.for all of this doing is not who you ***.listen 
+        to your hearts soft whisper,this voice will show you the ***.live 
+        life from your essence is what she will ***.see the light in yourself,
+        and your world will be ***.there is no need to worry,you are exactly 
+        as you should be;remember to love who you are,and love you will see.
+        </i>
+    </div>
+</div>
+<div class="foot"></div>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    slides[slideIndex-1].style.display = "block"; 
+    }
+    const search = document.querySelector('[type=search]')
+    const xiala = document.querySelector('.xiala')
+    const body = document.querySelector('body')
+    const nav = document.querySelector('#nav')
+    let timer = 0
+    xiala.addEventListener('click',function(e){
+        if(e.target.tagName = 'DIV'){
+            search.value = e.target.innerHTML
+            xiala.style = "display:none"
+        }
+        e.stopPropagation()
+    })
+    search.addEventListener('focus',function(){
+        xiala.style = "display:block"
+        clearTimeout(timer)
+    })
+    // search.addEventListener('mouseenter',function(){
+    //     xiala.style = "visibility:visible"
+    // })
+    search.addEventListener('blur',() => {
+        timer = setTimeout(() => {
+            xiala.style = "display:none"
+        },50)
+    })
+    window.addEventListener('scroll',function(){
+        const n = document.documentElement.scrollTop
+        if(n > 100){
+            nav.style="display:block"
+        }
+        else{
+            nav.style="display:none"
+        }
+    })
+    nav.addEventListener('click',function(){
+        document.documentElement.scrollTop = 0
+    })
+</script>
+</body>
+</html>

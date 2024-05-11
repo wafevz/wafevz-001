@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .s{
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        background-color: aqua;
+    }
+    input[type=radio]{
+        height: 30px;
+        width: 30px;
+    }
+</style>
+<body>
+    <form>
+        <button class="s">123</button>
+        <div class="w">
+            <input type="radio" class="dd">
+            <input type="radio">
+        </div>
+        <!-- <input type="radio">
+        <input type="radio"> -->
+    </form>
+    <script>
+        const s = document.querySelector('.dd')
+        s.addEventListener('click',() => {
+            if(s.checked){
+                s.checked = false
+            }
+        })
+    </script>
+</body>
+</html>

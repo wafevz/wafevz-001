@@ -1,0 +1,47 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:linear-gradient(to top right,pink,rgb(241, 241, 112))
+}
+.dod{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search{
+    width: 0px;
+    height: 50px;
+    transition: width .5s;
+    display: inline-block;
+}
+.btn{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../image/0000.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.mask{
+    background-color: black;
+    opacity: 0;
+    width: 50px;
+    height: 50px;
+}
+.mask:active{
+    opacity: .1;
+}
+input[type=search]{
+    font-size: larger;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+}
+input[type=search]:focus{
+    outline: none;
+}

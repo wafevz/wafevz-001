@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>项目1</title>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .tab{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    .tab th{
+        background-color: skyblue;
+        border: 1px solid black;
+    }
+    .tab td{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <table class="tab">
+        <tr>
+            <th><input type="checkbox" id="checkall"></th>
+            <th>1123</th>
+            <th>123</th>
+            <th>123</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="ck"></td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"class="ck"></td>
+            <td>22</td>
+            <td>22</td>
+            <td>22</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"class="ck"></td>
+            <td>33</td>
+            <td>33</td>
+            <td>33</td>
+        </tr>
+    </table>
+    <script>
+        const checkall = document.querySelector('#checkall')
+        const ck = document.querySelectorAll('.ck')
+        checkall.addEventListener('click',function(){
+            for(let i = 0;i<ck.length;i++){
+                ck[i].checked = checkall.checked
+            }
+        })
+        //const s = document.querySelector('.tab td')
+        //给每个小选择框设置事件    每点一下获得所有的已选的个数
+        for(let i = 0;i<ck.length;i++){
+            ck[i].addEventListener('click',function(){
+                let ckk = document.querySelectorAll('.ck:checked')
+                if(ckk.length < ck.length){
+                    checkall.checked = false
+                }
+                else{
+                    checkall.checked = true
+                }
+                //let ckk = document.querySelectorAll('.ck:checked')
+                //checkall.checked = ckk.length === ck.length
+            })
+        }
+    </script>
+</body>

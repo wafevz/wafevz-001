@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>123</li>
+        <li>111</li>
+    </ul>
+    <script>
+        const ul = document.querySelector('ul')
+        //创建节点
+        const li = document.createElement('li')
+        //写入节点的内容   可用字符串模版直接加,innerHTML可以识别标签
+        li.innerHTML = '1234'
+        //添加节点  添加到元素最后面
+        ul.appendChild(li)
+        //克隆结点 元素.cloneNode(true)  true 表示全部克隆，false 表示只克隆标签
+        const s = ul.children[1].cloneNode(true)
+        //添加节点   insertBefore(插入元素,插入在哪个元素的前面)
+        ul.insertBefore(s,ul.children[0])
+        //删除节点   通过父元素来删除 父元素.removeChild(要删除的子元素)
+        ul.removeChild(ul.children[0])
+    </script>
+</body>
+</html>

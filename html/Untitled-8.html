@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="utf-8">
+     <title>项目1</title>
+     <style>
+     body{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image:url(../image/4444.jpg);
+            overflow: hidden;
+        }
+        .shell{
+            position: relative;
+            width: 60vw;
+            height: 40vw;
+            max-width: 380px;
+            max-height: 250px;
+            margin: 0;
+            color: antiquewhite;
+            perspective: 1000px;
+            transform-origin: center;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+        }
+        .item{
+            position: absolute;
+            width: 60vw;
+            height: 40vw;
+            cursor: pointer;
+            max-width: 380px;
+            max-height: 250px;
+            box-shadow: 0 5px 20px black;
+            border-radius: 6px;
+            background-size: cover;
+            background-size: cover;
+            -webkit-box-reflect: below 25px -webkit-linear-gradient(transparent 50%,rgba(225,225,225,0.3)) ;
+            transition: transform 0.5s;
+        }
+        #w1{
+            background-image: url(../image/3333.jpg);
+            transform: translateZ(15vw) translateX(-25vw) rotateY(-25deg);
+            /* transition: transform 0.5s; */
+        }
+        #w2{
+            background-image: url(../image/4444.jpg);
+            transform: translateZ(25vw) translateX(-12vw) rotateY(-15deg);
+            /* transition: transform 0.5s; */
+        }
+        #w3{
+            background-image: url(../image/5555.jpg);
+            transform: translateZ(35vw) translateX(0vw) rotateY(0deg);
+            /* transition:transform 0.5s; */
+        }
+        #w4{
+            background-image: url(../image/6666.jpg);
+            transform: translateZ(25vw) translateX(12vw) rotateY(15deg);
+            /* transition: transform 0.5s; */
+        }
+        #w5{
+            background-image: url(../image/7777.jpg);
+            transform: translateZ(15vw) translateX(25vw) rotateY(25deg);
+            /* transition: transform 0.5s; */
+        }
+        .dot{
+            background-color:white;
+            width: 60px;
+            height:300px;
+            border: 0px;
+            cursor: pointer;
+            line-height: 300px;
+            font-size: 50px;
+            border-radius:10px;
+            position: absolute;
+            color:red;
+            text-align: center;
+            opacity: .4;
+        }
+        .dot:hover{
+            background-color: rgb(237, 224, 206);
+            color:black;
+            opacity: .8;
+        }
+        .pre{
+            left:0px;
+        }
+        .next{
+            right:0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="shell">
+        <div class="content">
+            <div class="item" id="w1"></div>
+            <div class="item" id="w2"></div>
+            <div class="item" id="w3"></div>
+            <div class="item" id="w4"></div>
+            <div class="item" id="w5"></div>
+        </div>
+    </div>
+    <div class="dot pre"><</div>
+    <div class="dot next">></div>
+    <script>
+        let m = 0;
+        const a = document.querySelectorAll('.item')
+        const pre = document.querySelector('.dot.pre')
+        const next = document.querySelector('.dot.next')
+        const content=document.querySelector('.content')
+        function s()
+        {
+            m++;
+            if(m == 1){
+                a[0].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+                a[1].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[2].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+                a[3].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+                a[4].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+
+            }
+            else if(m == 2){
+                a[0].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[1].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+                a[2].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+                a[3].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+                a[4].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+            }
+            else if(m==3){
+                a[0].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+                a[1].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+                a[2].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+                a[3].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+                a[4].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+            }
+            else if(m==4){
+                a[0].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+                a[1].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+                a[2].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+                a[3].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[4].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+            }
+            else if(m==5){
+                a[0].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+                a[1].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+                a[2].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[3].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+                a[4].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+            }
+            else if(m>5){
+                m=0;
+                s(1);
+            }
+        }
+        function f()
+        {
+            m--;
+            if(m==4){
+                a[0].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+                a[1].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+                a[2].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+                a[3].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[4].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+            }
+            if(m==3){
+                a[0].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+                a[1].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+                a[2].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+                a[3].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+                a[4].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+            }
+            if(m==2){
+                a[0].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[1].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+                a[2].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+                a[3].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+                a[4].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+            }
+            if(m==1){
+                a[0].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+                a[1].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[2].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+                a[3].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+                a[4].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+            }
+            if(m==0){
+                a[0].style.transform="translateZ(15vw) translateX(-25vw) rotateY(-25deg)";
+                a[1].style.transform="translateZ(25vw) translateX(-12vw) rotateY(-15deg)";
+                a[2].style.transform="translateZ(35vw) translateX(0vw) rotateY(0deg)";
+                a[3].style.transform="translateZ(25vw) translateX(12vw) rotateY(15deg)";
+                a[4].style.transform="translateZ(15vw) translateX(25vw) rotateY(25deg)";
+            }
+            if(m<0){
+                m=5;
+                f(1);
+            }
+        }
+        let timer=setInterval(s,500)
+        pre.addEventListener('click',f)
+        next.addEventListener('click',s)
+        content.addEventListener('mouseenter',function(){
+            clearInterval(timer)
+        })
+        content.addEventListener('mouseleave',function(){
+            clearInterval(timer)
+            timer=setInterval(s,500)
+        })
+        pre.addEventListener('mouseenter',function(){
+            clearInterval(timer)
+        })
+        pre.addEventListener('mouseleave',function(){
+            clearInterval(timer)
+            timer=setInterval(s,500)
+        })
+        next.addEventListener('mouseenter',function(){
+            clearInterval(timer)
+        })
+        next.addEventListener('mouseleave',function(){
+            clearInterval(timer)
+            timer=setInterval(s,500)
+        })
+    </script>
+</body>
+</html>
