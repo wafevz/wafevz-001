@@ -103,4 +103,5 @@ const close = document.querySelector('.ad-f')
 const ad = document.querySelector('.ad')
 close.addEventListener('click',() => {
     ad.style = "opacity:0;transform: translateY(200px);"
+    close.style = "transform: translateY(200px);"
 })

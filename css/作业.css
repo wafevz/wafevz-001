@@ -400,11 +400,75 @@ input[type=radio]{
     border-radius: 20px;
     position: relative;
 }
+.ss1{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border-radius: 10px;
+    background-image: url(../image/0000.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ss2{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 10px;
+    top: 55px;
+    border-radius: 10px;
+    background-image: url(../image/0000.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ss3{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 10px;
+    top: 100px;
+    border-radius: 10px;
+    background-image: url(../image/0000.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ss4{
+    width: 100%;
+    height: 50px;
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    bottom: 0;
+    /* background:linear-gradient(to top right,white,rgb(210, 209, 209)); */
+}
+.ss5{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+    margin-left: 20px;
+    border-radius: 100%;
+    background-image: url(../image/5555.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.ss6{
+    position: absolute;
+    bottom: 5px;
+    left: 70px;
+    height: 40px;
+    width: 100px;
+    margin-top: 5px;
+    font-size: large;
+    line-height: 40px;
+}
 .newmask{
     position: absolute;
     top: 0;
     left: 0;
-    background-color: black;
     opacity: 0;
     width: 300px;
     height: 250px;
@@ -412,7 +476,7 @@ input[type=radio]{
 }
 .newmask:hover{
     cursor: pointer;
-    opacity: 0.2;
+    opacity: 1;
 }
 .ad{
     position: fixed;
